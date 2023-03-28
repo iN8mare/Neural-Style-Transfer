@@ -1,4 +1,4 @@
-# Neural-Style-Transfer
+# Neural-Style-Transfer from scratch!
 Neural Style Transfer (NST) is one of the most fun and interesting optimization techniques in deep learning. It merges two images, namely: a <strong>"content" image (C)</strong> and a <strong>"style" image (S)</strong>, to create a <strong>"generated" image (G)</strong>. The generated image G combines the "content" of the image C with the "style" of image S. 
 
 I have combined the **Taj Mahal** in Agra, India (content image C) with an image of candy (style image S) to generate the following image:

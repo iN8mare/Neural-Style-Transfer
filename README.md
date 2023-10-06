@@ -27,7 +27,7 @@ $$J_{content}(C,G) =  \frac{1}{4 \times n_H \times n_W \times n_C}\sum _{ \text{
 * In order to compute the cost $J_{content}(C,G)$, it might also be convenient to unroll these 3D volumes into a 2D matrix, as shown below.
 
 ![NST_LOSS](https://user-images.githubusercontent.com/120567183/228228449-e8ee2aef-e0c9-44f6-85e0-047b0f700341.png)
-
+(Image source -- Deeplearning.ai)
 #### Gram matrix
 * The style matrix is also called a "Gram matrix." 
 * In linear algebra, the Gram matrix G of a set of vectors $(v_{1},\dots ,v_{n})$ is the matrix of dot products, whose entries are ${\displaystyle G_{ij} = v_{i}^T v_{j} = np.dot(v_{i}, v_{j})  }$. 
@@ -36,14 +36,14 @@ $$J_{content}(C,G) =  \frac{1}{4 \times n_H \times n_W \times n_C}\sum _{ \text{
 I have computed the Style matrix by multiplying the "unrolled" filter matrix with its transpose:
 
 ![NST_GM](https://user-images.githubusercontent.com/120567183/228229324-1559411f-3144-4fb9-9ba3-8710c9b4ab1b.png)
-
+(Image source -- Deeplearning.ai)
 
 $$\mathbf{G}_{gram} = \mathbf{A}_{unrolled} \mathbf{A}_{unrolled}^T$$
 
 #### $G_{(gram)ij}$: correlation
 The result is a matrix of dimension $(n_C,n_C)$ where $n_C$ is the number of filters (channels). The value $G_{(gram)i,j}$ measures how similar the activations of filter $i$ are to the activations of filter $j$. 
 
-#### $G_{(gram),ii}$: prevalence of patterns or textures
+#### $$G_{(gram),ii}$$: prevalence of patterns or textures
 * The diagonal elements $G_{(gram)ii}$ measure how "active" a filter $i$ is. 
 * For example, suppose filter $i$ is detecting vertical textures in the image. Then $G_{(gram)ii}$ measures how common  vertical textures are in the image as a whole.
 * If $G_{(gram)ii}$ is large, this means that the image has a lot of vertical texture. 
